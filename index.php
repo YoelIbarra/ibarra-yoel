@@ -25,12 +25,12 @@
 
     <main class="contenedor">
         <?php
-            //Defino variables
+            //Defino variables y constantes
             $TotalIntegrantes = 13;
             $CantHombres = 3;
             $CantMujeres = $TotalIntegrantes - $CantHombres;
-            $EspacioHabitacionGrande = 3;
-            $EspacioHabitacionChica = 2;
+            const EspacioHabitacionGrande = 3;
+            const EspacioHabitacionChica = 2;
             $CantHabitacionGrande = 2;
             $CantHabitacionChica = 4;
         ?>
@@ -52,8 +52,8 @@
             <h3>Habitaciones</h3>
             <p>Las habitaciones con las que contamos son unisex, actualmente estamos organizados con un total de</p>
             <ul>
-                <li><?php echo $CantHabitacionGrande ?> habitaciones de <?php echo $EspacioHabitacionGrande ?> personas</li>
-                <li><?php echo $CantHabitacionChica ?> habitaciones de <?php echo $EspacioHabitacionChica ?> personas</li>
+                <li><?php echo $CantHabitacionGrande ?> habitaciones de <?php echo EspacioHabitacionGrande ?> personas</li>
+                <li><?php echo $CantHabitacionChica ?> habitaciones de <?php echo EspacioHabitacionChica ?> personas</li>
             </ul>
         </section>
     </div>  
