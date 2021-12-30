@@ -9,19 +9,10 @@
     <title>Proyecto</title>
 </head>
 <body>
-    <header>
-        <h1 class="titulo">CECACAF</h1>
-        <h2 class="subtitulo">Casa de Estudiantes de Carmen de Areco <br> en Capital Federal</h2>
-    </header>
+
+    <?php include("header.php") ?>
     
-    <div class="nav-fondo">
-        <nav class="barra-superior contenedor">
-            <a href="#">Inicio</a>
-            <a href="#">Integrantes</a>
-            <a href="#">Contacto</a>
-            <a href="#">Inscripción</a>
-        </nav>
-    </div>
+
 
     <main class="contenedor">
         <?php
@@ -41,7 +32,8 @@
 		</div>	  
     </main>
 
-    <div class="contenedor contenedor-secundario">
+    <div class="contenedor contenedor-inicio">
+        
         <section class="">
             <h3>Integrantes</h3>
             <p>Actualmente viviendo en al residencia hay un total de <?php echo $TotalIntegrantes ?> personas</p>
@@ -58,11 +50,6 @@
         </section>
     </div>  
 
-    <footer class="footer">
-        <div class="footer-style">
-            <p>Cualquier duda o consulta, no dude en contactarse con nosotros</p>
-            <a href="#">Contacto</a>
-        </div>
-    </footer>
+    <?php include("footer.php"); ?>
 </body>
 </html>

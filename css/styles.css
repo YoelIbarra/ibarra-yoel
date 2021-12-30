@@ -78,7 +78,7 @@ body {
 }
 
 /*Body*/
-.contenedor-secundario{
+.contenedor-inicio{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -88,7 +88,7 @@ body {
     
 
 }
-.contenedor-secundario > section{
+.contenedor-inicio > section{
 
     border: var(--blanco) 0.1rem solid;
     width: 40%;
