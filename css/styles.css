@@ -57,6 +57,19 @@ body {
 .barra-superior a{
     text-decoration: none;
 }
+
+/*footer*/
+.footer{
+    display: flex;
+    justify-content: center;
+    background-color: var(--oscuro);
+    margin-top: 7rem;
+    height: 10rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    
+    
+}
 .footer-style{
     display:flex;   
     flex-direction: column;
@@ -77,6 +90,7 @@ body {
 
 }
 
+/*---------- INICIO ---------*/
 /*Body*/
 .contenedor-inicio{
     display: flex;
@@ -98,15 +112,16 @@ body {
 }
 
 
-/*footer*/
-.footer{
+
+
+/*---------- CONTACTO ---------*/
+
+.contacto-navegacion{
     display: flex;
-    justify-content: center;
-    background-color: var(--oscuro);
-    margin-top: 7rem;
-    height: 10rem;
-    padding-top: 2rem;
-    padding-bottom: 3rem;
+    flex-direction: column;
     
-    
+
+}
+.contacto-navegacion a{
+    text-decoration: none;   
 }
