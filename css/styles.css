@@ -1,7 +1,10 @@
 html { 
     font-size: 62.5%;
+    box-sizing: border-box;
 }
-
+*,*:before,*:after {
+    box-sizing: inherit;
+}
 body {
     font-size: 16px; /*1rem = 10px*/
     background-color: var(--principal);
@@ -18,8 +21,9 @@ body {
 
 /*Generales*/
     .contenedor{
-        width: 120rem;
+        max-width: 120rem;
         margin: 0 auto 0 auto;
+ 
     }
     .texto-contenedor{
         text-align: center;
@@ -54,7 +58,7 @@ body {
     justify-content: space-evenly;
     
 }
-.barra-superior a{
+.barra-superior a, a:visited{
     text-decoration: none;
 }
 
@@ -63,12 +67,12 @@ body {
     display: flex;
     justify-content: center;
     background-color: var(--oscuro);
+    width: 100%;
     margin-top: 7rem;
-    height: 10rem;
+    height: 15rem;
     padding-top: 2rem;
-    padding-bottom: 3rem;
-    
-    
+    padding-bottom: 3rem; 
+    bottom: 0;
 }
 .footer-style{
     display:flex;   
@@ -119,9 +123,35 @@ body {
 .contacto-navegacion{
     display: flex;
     flex-direction: column;
-    
-
+    border: var(--oscuro) 0.4rem solid;
+    width:  40%;
+   align-content: center;
+   padding: 2rem;
+   padding-left: 4rem;
+   
 }
 .contacto-navegacion a{
     text-decoration: none;   
+}
+.contacto-contenedor{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    
+}
+.contacto-form{
+    margin-top: 3rem;
+}
+.contacto-form fieldset{
+    display: flex;
+    padding: 3rem 1rem 3rem 1rem;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+
+}
+.contacto-form-item{
+    flex-direction: column;
+    padding: 0 1.5rem 0 1.5rem;
+    max-width: 40%;
+
 }

@@ -5,9 +5,9 @@
         
         <div class="nav-fondo">
             <nav class="barra-superior contenedor">
-                <a href="#">Inicio</a>
+                <a href="index.php">Inicio</a>
                 <a href="#">Integrantes</a>
-                <a href="#">Contacto</a>
+                <a href="contacto.php">Contacto</a>
                 <a href="#">Inscripción</a>
             </nav>
         </div>

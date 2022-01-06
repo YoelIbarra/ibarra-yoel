@@ -9,33 +9,65 @@
     <title>Contacto</title>
 </head>
 
-<nav class="contacto-navegacion">
-    <a href="">Me quiero inscribir por primera vez</a>
-    <a href="">Ya me inscribí y quiero saber mi situación actual</a>
-    <a href="">Quiero ayudar a la casa</a>
-    <a href="">Otros</a>
-</nav>
+    <?php include('header.php'); ?>
 
-<form action="">
-    <fieldset>
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Su Nombre" maxlength="50" required>
+<body>
+    <div class="contenedor contacto-contenedor">
+        <nav class="contacto-navegacion">
+            <h3 style="text-align: center;">**Esto seria un radio botton para elegir que contacto mostrar**</h3>
+            <a href="">Me quiero inscribir por primera vez</a>
+            <a href="">Ya me inscribí y quiero saber mi situación actual</a>
+            <a href="">Quiero ayudar a la casa</a>
+            <a href="">Otros</a>
+            
+        </nav>
+    </div>
 
-        <label for="apellido">Apellido</label>
-        <input type="text" id="apellido" name="apellido" placeholder="Su Apellido" maxlength="50" required>
+    <div class="contenedor contacto-contenedor contacto-form">
+    <form action="enviar-contacto.php" method="POST">
+        <fieldset>
+            <div class="contacto-form-item">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Su Nombre" maxlength="50" required>
+            </div>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Su email" maxlength="50" required>
+            <div class="contacto-form-item">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Su Apellido" maxlength="50" required>
+            </div>
+            <!-- esto comento porque no hiría para un contacto-->
+            <!--label for="dni">DNI</label>
+            <input type="number" id="dni" name="dni" placeholder="Su DNI" maxlength="8" required-->
+        </fieldset>
+        <fieldset>
+            <div class="contacto-form-item">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Su email" maxlength="50" required>
+            </div>
+            <div class="contacto-form-item">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Su teléfono" maxlength="15" default="0">
+            </div>
+        </fieldset>
 
-        <label for="dni">DNI</label>
-        <input type="number" id="dni" name="dni" placeholder="Su DNI" maxlength="8" required>
+        <fieldset>
+            <label for="mensaje">Su mensaje</label>
+            <input type="textarea" id="mensaje" name="mensaje" placeholder="Por favor, escriba aquí su mensaje" required> 
+        </fieldset>
 
-    </fieldset>
-    <fieldset>
-        <input type="textarea" placeholder="">
-    </fieldset>
+        <input type="submit" value="Enviar">
+    </form>
 
-    <input type="submit" value="Enviar">
-</form>
+
+        <h5><?php if(isset($_GET['mensaje'])){ 
+            if($_GET['mensaje'] = "ok"){
+            echo "Mensaje enviado correctamente!!";
+        } } ?></h5>
+
+    </div>
+    
+</body>
+
+<?php include('footer.php') ?>
 
 </html>
