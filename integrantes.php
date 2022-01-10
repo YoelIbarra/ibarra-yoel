@@ -15,9 +15,9 @@
     <div class="contenedor ">
         <h2>Por favor, seleccione a quien desea ver</h2>
         <nav class="contacto-navegacion contacto-contenedor">
-            <a href="integrantes?rol=presi">Presidente</a>
-            <a href="integrantes?rol=teso">Tesorero</a>
-            <a href="integrantes?rol=secre">Secretario</a>
+            <a href="integrantes.php?rol=0">Presidente</a>
+            <a href="integrantes.php?rol=1">Tesorero</a>
+            <a href="integrantes.php?rol=2">Secretario</a>
         </nav>
     </div>
 
@@ -31,10 +31,10 @@
         ?>
 
         <main class="contenedor">
-            <h3>
+            <h2>
                 <?php 
                     if(isset($_GET['rol'])){
-                        echo "Rol = " . $rol ;
+                        echo $rol ;
                     } 
                 ?>                
             </h2>
@@ -52,7 +52,7 @@
                     }
                 ?> 
             </h3>
-            <h4>
+            <h3>
                 <?php 
                     if(isset($_GET['rol'])){
                         echo "Carrera: " . $carrera;
