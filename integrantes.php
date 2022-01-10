@@ -12,13 +12,16 @@
 
     <?php include('header.php') ?>
 
-    <div class="contenedor ">
+    <div class="contenedor">
         <h2>Por favor, seleccione a quien desea ver</h2>
-        <nav class="contacto-navegacion contacto-contenedor">
-            <a href="integrantes.php?rol=0">Presidente</a>
-            <a href="integrantes.php?rol=1">Tesorero</a>
-            <a href="integrantes.php?rol=2">Secretario</a>
-        </nav>
+
+        <div class="">
+            <nav class="navegacion-integrante">
+                <a href="integrantes.php?rol=0" class="boton-integrante">Presidente</a>
+                <a href="integrantes.php?rol=1" class="boton-integrante">Tesorero</a>
+                <a href="integrantes.php?rol=2" class="boton-integrante">Secretario</a>
+            </nav>
+        </div>
     </div>
 
         <?php 

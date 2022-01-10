@@ -66,6 +66,7 @@ h1,h2,h3,h4,h5{
 }
 .barra-superior a, a:visited{
     text-decoration: none;
+    color: rgb(26, 64, 136);
 }
 
 .logo{
@@ -111,6 +112,19 @@ h1,h2,h3,h4,h5{
 
 
 }
+
+.boton-footer {
+    border: var(--blanco) .2rem solid;
+    border-radius: 1rem;
+}
+
+.boton-footer:focus {
+    border: var(--oscuro) .2rem solid;
+    border-radius: 1rem;
+    background-color: cornflowerblue;
+}
+
+
 
 /*---------- INICIO ---------*/
 /*Body*/
@@ -172,6 +186,35 @@ h1,h2,h3,h4,h5{
     padding: 0 1.5rem 0 1.5rem;
     max-width: 40%;
 
+}
+
+/*integrantes*/
+
+.navegacion-integrante {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    margin-top: 3rem;
+}
+.navegacion-integrante a{
+    text-decoration: none;
+    
+}
+.navegacion-integrante a:visited{
+    color: inherit;
+}
+.boton-integrante {
+    border: var(--oscuro) .2rem solid;
+    background-color: var(--secundario);
+    border-radius: 1rem;
+    padding: 2rem;
+    font-size: 2rem;
+    font-weight:lighter;
+
+}
+.boton-integrante:focus {
+    background-color: rgb(22, 150, 71);
 }
 
 
