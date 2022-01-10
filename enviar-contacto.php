@@ -14,7 +14,7 @@
     mysqli_query($conexion, $queryEnviar);
     mysqli_close($conexion);
 
-    header("location: contacto.php?mensaje=ok");
+    header("location: contacto.php?m=ok");
 
 ?>
 

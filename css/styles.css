@@ -32,19 +32,25 @@ body {
     
 
 
-/*Header*/
 
-.titulo{
-    text-align: center;
+h1{
     font-size: 3.8rem;
 }
-
-.subtitulo{
+h2{
+    font-size: 2.8rem;
+}
+h3{
+    font-size: 2rem;
+}
+h4{
+    font-size: 1rem;
+}
+h1,h2,h3,h4,h5{
     text-align: center;
-    font-size: 3rem;
+
 }
 
-/*Navegación Barra*/
+/*Header*/  
 .nav-fondo{
     background-color: var(--secundario);
     padding: 1.5rem;
@@ -60,6 +66,18 @@ body {
 }
 .barra-superior a, a:visited{
     text-decoration: none;
+}
+
+.logo{
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    margin: 2rem;
+    width: 15rem;
+    height: 15rem;
+    
+
 }
 
 /*footer*/
@@ -155,3 +173,5 @@ body {
     max-width: 40%;
 
 }
+
+
