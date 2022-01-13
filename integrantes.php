@@ -63,7 +63,7 @@
                 ?>
             </h4>
         </main>
-            
+     <?php include('footer.php'); ?>       
     
 </body>
 </html>

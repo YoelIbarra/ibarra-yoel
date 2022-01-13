@@ -42,11 +42,11 @@
             </fieldset>
 
             <fieldset>
-                <label for="mensaje">Su mensaje</label>
-                <input type="textarea" id="mensaje" name="mensaje" placeholder="Por favor, escriba aquí su mensaje" required> 
+                <input type="textarea" id="mensaje" name="mensaje" placeholder="Por favor, escriba aquí su mensaje" class="contacto-mensaje" required> 
             </fieldset>
-
-            <input type="submit" value="Enviar">
+            <div class="boton-contacto-posicion">
+                <input class="boton-contacto-enviar"type="submit" value="Enviar">
+            </div>
         </form>
 
 
