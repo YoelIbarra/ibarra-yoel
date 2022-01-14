@@ -85,7 +85,7 @@ h1,h2,h3,h4,h5{
 .footer{
     display: flex;
     justify-content: center;
-    position: absolute;
+    position: relative;
     background-color: var(--oscuro);
     width: 100%;
     margin-top: 7rem;

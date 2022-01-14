@@ -13,7 +13,7 @@
     <?php include('header.php') ?>
 
     <div class="contenedor">
-        <h2>Por favor, seleccione a quien desea ver</h2>
+        <h2>Seccion de integrantes</h2>
 
         <div class="">
             <nav class="navegacion-integrante">
@@ -34,6 +34,13 @@
         ?>
 
         <main class="contenedor">
+        <h2>
+                <?php 
+                    if(!isset($_GET['rol'])){
+                        echo "Por favor, haga clic en un boton <br> para poder ver a la persona." ;
+                    } 
+                ?>                
+         </h2>
             <h2>
                 <?php 
                     if(isset($_GET['rol'])){
