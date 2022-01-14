@@ -34,12 +34,14 @@
         ?>
 
         <main class="contenedor">
-        <h2>
+        <h2 class="integrantes-media">
                 <?php 
                     if(!isset($_GET['rol'])){
                         echo "Por favor, haga clic en un boton <br> para poder ver a la persona." ;
-                    } 
-                ?>                
+                    }
+                     
+                ?>  
+                              
          </h2>
             <h2>
                 <?php 
@@ -70,7 +72,17 @@
                 ?>
             </h4>
         </main>
-     <?php include('footer.php'); ?>       
+        
+     <?php 
+     //Esto lo hago porque sino la página se me veía muy mal.. 
+     if(!isset($_GET['rol'])){
+
+        echo '<div class="absolute-footer">';
+        include('footer.php');
+        echo '</div>';
+
+     }else{
+     include('footer.php');} ?>       
     
 </body>
 </html>

@@ -50,6 +50,10 @@
         </section>
     </div>  
 
-    <?php include("footer.php"); ?>
+    <?php         
+        echo '<div class="absolute-footer">';
+        include('footer.php');
+        echo '</div>'; 
+        ?>
 </body>
 </html>
