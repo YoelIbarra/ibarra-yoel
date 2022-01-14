@@ -235,12 +235,14 @@ h1,h2,h3,h4,h5{
 .boton-integrante:focus {
     background-color: rgb(22, 150, 71);
 }
-  .absolute-footer{
-        position: absolute;
-        bottom: 0;
-        width:100%;
-        
-    }
-
+.absolute-footer{}
+@media (min-height: 760px){
+	.absolute-footer{
+			position: absolute;
+			bottom: 0;
+			width:100%;
+			
+		}
+}
 
 
