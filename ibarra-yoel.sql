@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-01-2022 a las 15:56:09
+-- Tiempo de generación: 14-01-2022 a las 19:49:42
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.3.31
 
@@ -18,13 +18,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `cecacf`
+-- Base de datos: `ibarra-yoel`
 --
+CREATE DATABASE IF NOT EXISTS `ibarra-yoel` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `ibarra-yoel`;
 
 DELIMITER $$
 --
 -- Procedimientos
 --
+DROP PROCEDURE IF EXISTS `contactoInsertar`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `contactoInsertar` (IN `inombre` VARCHAR(50), IN `iapellido` VARCHAR(50), IN `iemail` VARCHAR(100), IN `itel` DECIMAL(15), IN `itext` VARCHAR(255))  INSERT into contacto 
 (nombre,apellido,email,telefono,consulta)
 VALUES (inombre,iapellido,iemail,itel,itext)$$
@@ -37,16 +40,23 @@ DELIMITER ;
 -- Estructura de tabla para la tabla `contacto`
 --
 
-CREATE TABLE `contacto` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `contacto`;
+CREATE TABLE IF NOT EXISTS `contacto` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) NOT NULL,
   `apellido` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `telefono` decimal(15,0) DEFAULT NULL,
   `consulta` varchar(255) NOT NULL,
-  `fecha` date NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `fecha` date NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
+--
+-- Truncar tablas antes de insertar `contacto`
+--
+
+TRUNCATE TABLE `contacto`;
 --
 -- Volcado de datos para la tabla `contacto`
 --
@@ -61,14 +71,22 @@ INSERT INTO `contacto` (`id`, `nombre`, `apellido`, `email`, `telefono`, `consul
 -- Estructura de tabla para la tabla `integrantes`
 --
 
-CREATE TABLE `integrantes` (
-  `id_persona` int(11) NOT NULL,
+DROP TABLE IF EXISTS `integrantes`;
+CREATE TABLE IF NOT EXISTS `integrantes` (
+  `id_persona` int(11) NOT NULL AUTO_INCREMENT,
   `carrera` varchar(100) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `apellido` varchar(50) NOT NULL,
-  `id_rol` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_rol` int(11) NOT NULL,
+  PRIMARY KEY (`id_persona`),
+  KEY `id_rol` (`id_rol`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
+--
+-- Truncar tablas antes de insertar `integrantes`
+--
+
+TRUNCATE TABLE `integrantes`;
 --
 -- Volcado de datos para la tabla `integrantes`
 --
@@ -84,11 +102,18 @@ INSERT INTO `integrantes` (`id_persona`, `carrera`, `nombre`, `apellido`, `id_ro
 -- Estructura de tabla para la tabla `rol`
 --
 
-CREATE TABLE `rol` (
+DROP TABLE IF EXISTS `rol`;
+CREATE TABLE IF NOT EXISTS `rol` (
   `id_rol` int(11) NOT NULL,
-  `descripcion` varchar(100) NOT NULL
+  `descripcion` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_rol`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Truncar tablas antes de insertar `rol`
+--
+
+TRUNCATE TABLE `rol`;
 --
 -- Volcado de datos para la tabla `rol`
 --
@@ -104,7 +129,8 @@ INSERT INTO `rol` (`id_rol`, `descripcion`) VALUES
 -- Estructura de tabla para la tabla `solicitudesinscripcion`
 --
 
-CREATE TABLE `solicitudesinscripcion` (
+DROP TABLE IF EXISTS `solicitudesinscripcion`;
+CREATE TABLE IF NOT EXISTS `solicitudesinscripcion` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `apellido` varchar(50) NOT NULL,
@@ -114,54 +140,15 @@ CREATE TABLE `solicitudesinscripcion` (
   `observacionAdmin` varchar(255) NOT NULL,
   `creado` date NOT NULL DEFAULT current_timestamp(),
   `anioVacante` int(11) NOT NULL,
-  `notificar` tinyint(1) NOT NULL
+  `notificar` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Índices para tablas volcadas
+-- Truncar tablas antes de insertar `solicitudesinscripcion`
 --
 
---
--- Indices de la tabla `contacto`
---
-ALTER TABLE `contacto`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `integrantes`
---
-ALTER TABLE `integrantes`
-  ADD PRIMARY KEY (`id_persona`),
-  ADD KEY `id_rol` (`id_rol`);
-
---
--- Indices de la tabla `rol`
---
-ALTER TABLE `rol`
-  ADD PRIMARY KEY (`id_rol`);
-
---
--- Indices de la tabla `solicitudesinscripcion`
---
-ALTER TABLE `solicitudesinscripcion`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `contacto`
---
-ALTER TABLE `contacto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT de la tabla `integrantes`
---
-ALTER TABLE `integrantes`
-  MODIFY `id_persona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
+TRUNCATE TABLE `solicitudesinscripcion`;
 --
 -- Restricciones para tablas volcadas
 --
