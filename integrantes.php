@@ -73,16 +73,13 @@
             </h4>
         </main>
         
-     <?php 
+    <?php 
      //Esto lo hago porque sino la página se me veía muy mal.. 
-     if(!isset($_GET['rol'])){
-
         echo '<div class="absolute-footer">';
         include('footer.php');
         echo '</div>';
 
-     }else{
-     include('footer.php');} ?>       
-    
+    ?>       
+            
 </body>
 </html>

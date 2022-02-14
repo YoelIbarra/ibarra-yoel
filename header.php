@@ -14,7 +14,7 @@
                     <a href="index.php">Inicio</a>
                     <a href="integrantes.php">Integrantes</a>
                     <a href="contacto.php">Contacto</a>
-                    <a href="#">Inscripción</a>
+                    <a href="inscripcion.php">Inscripción</a>
                 </nav>
             </div>
         </div>
