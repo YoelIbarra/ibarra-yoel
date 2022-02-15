@@ -14,8 +14,22 @@
 <body>
     <main>
         <h2>Formulario de Inscripción</h2>
+        <h3 class="contenedor alerta "><?php if(isset($_GET['m'])){ 
+               
+                $mensaje =  $_GET['m'];
+                if($mensaje == "ok"){
+                    echo "Usted se ha inscripto correctamente!!";
+                }
+                else if($mensaje == "dup"){
+                    $dni = $_GET['dni'];
+                    echo ' 
+                                No se pudo inscribir porque su dni '.$dni.' ya fue anotado, <br> por favor contactese a traves de el boton "Contacto" 
+                            ';
+                }
+            } ?>
+        </h3>
         <div class="contenedor contacto-contenedor contacto-form">
-        <form action="enviar-contacto.php" method="POST">
+        <form action="enviar-inscripcion.php" method="POST">
             <fieldset>
                 <div class="contacto-form-item">
                     <label for="nombre">Nombre</label>
@@ -43,7 +57,7 @@
             </fieldset>
 
             <fieldset>
-                <textarea name="universidad" id="universidad" cols="50" rows="5" maxlength="255" placeholder="Por favor, escriba aquí a que universidad usted asistirá" required></textarea>
+                <textarea name="carrera" id="carrera" cols="50" rows="5" maxlength="255" placeholder="Por favor, escriba aquí que carrera estará estudiando" required></textarea>
             </fieldset>
             <fieldset>
                 <textarea name="mensaje" id="mensaje" cols="50" rows="10" maxlength="255" placeholder="Por favor, escriba aquí su mensaje" required></textarea>
@@ -52,17 +66,7 @@
                 <input class="boton-contacto-enviar"type="submit" value="Enviar">
             </div>
 
-            <h3><?php if(isset($_GET['m'])){ 
-                
-                $mensaje =  $_GET['m'];
-                if($mensaje == "ok"){
-                    echo "Mensaje enviado correctamente!!";
-                }
-                else if($mensaje == "dup"){
-                    echo "No se pudo inscribir porque su dni ya fue anotado, por favor contactese a traves de el boton \"Contacto\"";
-                }
-                } ?>
-            </h3>
+
         </form>
 
 

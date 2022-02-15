@@ -29,7 +29,12 @@ body {
         text-align: center;
     }
 
-    
+    .alerta{
+        width: 50%;
+        color: rgb(68, 23, 23);
+        text-align: center;
+        text-decoration: double;    
+    }
 
 
 
