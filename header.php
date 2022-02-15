@@ -12,9 +12,10 @@
             <div class="nav-fondo">
                 <nav class="barra-superior contenedor">
                     <a href="index.php">Inicio</a>
-                    <a href="integrantes.php">Integrantes</a>
+                    <a href="comision.php">Comision</a>
                     <a href="contacto.php">Contacto</a>
                     <a href="inscripcion.php">Inscripción</a>
+                    <a href="inscriptos.php">Inscriptos</a>
                 </nav>
             </div>
         </div>

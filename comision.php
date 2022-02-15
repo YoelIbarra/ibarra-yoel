@@ -6,20 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/styles.css">
-    <title>Integrantes</title>
+    <title>Comision</title>
 </head>
 <body>
 
     <?php include('header.php') ?>
 
     <div class="contenedor">
-        <h2>Seccion de integrantes</h2>
+        <h2>Seccion de la Comision</h2>
 
         <div class="">
             <nav class="navegacion-integrante">
-                <a href="integrantes.php?rol=0" class="boton-integrante">Presidente</a>
-                <a href="integrantes.php?rol=1" class="boton-integrante">Tesorero</a>
-                <a href="integrantes.php?rol=2" class="boton-integrante">Secretario</a>
+                <a href="comision.php?rol=0" class="boton-integrante">Presidente</a>
+                <a href="comision.php?rol=1" class="boton-integrante">Tesorero</a>
+                <a href="comision.php?rol=2" class="boton-integrante">Secretario</a>
             </nav>
         </div>
     </div>
