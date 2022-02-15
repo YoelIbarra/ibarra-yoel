@@ -1,5 +1,6 @@
 html { 
     font-size: 62.5%;
+
     box-sizing: border-box;
 }
 *,*:before,*:after {
@@ -251,4 +252,16 @@ h1,h2,h3,h4,h5{
 		}
 }
 
-
+/*Robando clase tabla de bootstrap :)*/
+.table{
+    width:100%;margin-bottom:1rem;background-color:transparent}
+.table td,.table th{
+    padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;
+    /*mio*/
+    text-align: center;}
+.table thead th{
+    vertical-align:bottom;border-bottom:2px solid #dee2e6}
+.table tbody+tbody{
+    border-top:2px solid #dee2e6}
+.table .table{
+    background-color:#fff}

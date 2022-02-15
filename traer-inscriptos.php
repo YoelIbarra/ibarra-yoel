@@ -2,7 +2,11 @@
     
     include ('base-datos.php');
 
-    $query = "select *"
+    $query = "SELECT id, documento, nombre, apellido, mail, telefono, carrera, otro FROM inscripto";
+
+    $inscriptos = mysqli_query($conexion,$query);
+
+    mysqli_close($conexion);
 
 
 
