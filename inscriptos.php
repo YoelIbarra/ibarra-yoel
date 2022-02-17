@@ -13,12 +13,17 @@
         include("header.php"); 
         include("traer-inscriptos.php");
         if($inscriptos->num_rows == 0){
-            echo "Aún no hay inscriptos";
+            echo "<h1>Aún no hay inscriptos</h1>";
+            if(isset($_GET['b'])) 
+                echo "<h2> Se a borrado el inscripto con id ".$_GET['b']."</h2>";
         }else{
     ?>
     
     <main class="contenedor">
         <h1>Inscriptos</h1>
+        <?php if(isset($_GET['b'])) {?>
+            <h2> Se a borrado el inscripto con id <?php echo $_GET['b']; ?> </h2> <?php } 
+        ?>
         <table class="table">
             <tr>
                 <td>Nombre</td>
@@ -37,8 +42,12 @@
                             <td>" . $inscripto['apellido'] . "</td>
                             <td>" . $inscripto['documento'] . "</td>
                             <td>" . $inscripto['mail'] . "</td>
-                            <td>BOTON MODIFICAR (".$inscripto['id'] . ")</td>
-                            <td>BOTON MODIFICAAR (" . $inscripto['id'] . ")</td>
+                            <td>
+                                BOTON MODIFICAR (".$inscripto['id'] . ")
+                            </td>
+                            <td>
+                                <a href='eliminar-inscripto.php?id=".$inscripto['id']."' class='boton'>Eliminar</a>
+                            </td>
                         </tr> 
                     ";
                 }
@@ -57,6 +66,13 @@
 
 
 
-    <?php }include("footer.php") ?>
+    <?php }
+    if($inscriptos->num_rows <10){
+        echo '<div class="absolute-footer">';
+        include('footer.php');
+        echo '</div>';        
+    ?>
+    <?php } else {
+    include("footer.php"); }?>
 </body>
 </html>
