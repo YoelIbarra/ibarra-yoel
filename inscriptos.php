@@ -22,7 +22,10 @@
     <main class="contenedor">
         <h1>Inscriptos</h1>
         <?php if(isset($_GET['b'])) {?>
-            <h2> Se a borrado el inscripto con id <?php echo $_GET['b']; ?> </h2> <?php } 
+            <h2> Se ha borrado el inscripto con id <?php echo $_GET['b']; ?> </h2> <?php }
+        if(isset($_GET['m']) and $_GET['m']== 'ok'){?>
+             <h2> Se ha modificado el inscripto id <?php echo $_GET['id']; ?> correcatamente </h2>
+        <?php } 
         ?>
         <table class="table">
             <tr>
