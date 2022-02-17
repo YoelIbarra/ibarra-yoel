@@ -56,6 +56,17 @@ h1,h2,h3,h4,h5{
 
 }
 
+.bold{
+    font-weight: bold;
+}
+
+.boton {
+    text-decoration: none;
+    border: var(--oscuro) .2rem solid;
+    color: rgb(107, 5, 107);
+    border-radius: 1.5rem;
+    padding: .5rem;
+}
 /*Header*/  
 .nav-fondo{
     background-color: var(--secundario);

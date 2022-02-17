@@ -26,12 +26,12 @@
         ?>
         <table class="table">
             <tr>
-                <td>Nombre</td>
-                <td>Apellido</td>
-                <td>Documento</td>
-                <td>Mail</td>
-                <td>Modificar</td>
-                <td>Eliminar</td>
+                <td class="bold">Nombre</td>
+                <td class="bold">Apellido</td>
+                <td class="bold">Documento</td>
+                <td class="bold">Mail</td>
+                <td class="bold"></td>
+                <td class="bold"></td>
             </tr>
 
             <?php 
@@ -43,7 +43,7 @@
                             <td>" . $inscripto['documento'] . "</td>
                             <td>" . $inscripto['mail'] . "</td>
                             <td>
-                                BOTON MODIFICAR (".$inscripto['id'] . ")
+                                <a href='modificar-inscripto.php?id=".$inscripto['id']."' class='boton'>Modificar</a>
                             </td>
                             <td>
                                 <a href='eliminar-inscripto.php?id=".$inscripto['id']."' class='boton'>Eliminar</a>
