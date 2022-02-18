@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-01-2022 a las 19:49:42
+-- Tiempo de generación: 18-02-2022 a las 03:01:16
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.3.31
 
@@ -39,6 +39,8 @@ DELIMITER ;
 --
 -- Estructura de tabla para la tabla `contacto`
 --
+-- Creación: 14-01-2022 a las 18:50:37
+--
 
 DROP TABLE IF EXISTS `contacto`;
 CREATE TABLE IF NOT EXISTS `contacto` (
@@ -50,25 +52,62 @@ CREATE TABLE IF NOT EXISTS `contacto` (
   `consulta` varchar(255) NOT NULL,
   `fecha` date NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 --
--- Truncar tablas antes de insertar `contacto`
+-- RELACIONES PARA LA TABLA `contacto`:
 --
 
-TRUNCATE TABLE `contacto`;
 --
 -- Volcado de datos para la tabla `contacto`
 --
 
 INSERT INTO `contacto` (`id`, `nombre`, `apellido`, `email`, `telefono`, `consulta`, `fecha`) VALUES
 (2, 'Yoel', 'Ibarra', 'yoelibarra98@gmail.com', '2325659628', 'Prueba de envio a base de datos', '2022-01-06'),
-(3, 'Yoel', 'Ibarra', 'yoelibarra98@gmail.com', '303456', 'Prueba con include base-datos.php', '2022-01-06');
+(3, 'Yoel', 'Ibarra', 'yoelibarra98@gmail.com', '303456', 'Prueba con include base-datos.php', '2022-01-06'),
+(4, 'asdas', 'dasdasdas', 'asddasdsa@asdasdas.a', '0', 'dasdasdasdas', '2022-02-07'),
+(5, 'dasd', 'asdas', '23123123', '0', 'asdasd', '2022-02-07');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `inscripto`
+--
+-- Creación: 15-02-2022 a las 15:22:41
+--
+
+DROP TABLE IF EXISTS `inscripto`;
+CREATE TABLE IF NOT EXISTS `inscripto` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `documento` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `apellido` varchar(50) NOT NULL,
+  `mail` varchar(50) NOT NULL,
+  `telefono` decimal(15,0) DEFAULT NULL,
+  `carrera` varchar(100) NOT NULL,
+  `otro` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `documento` (`documento`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+
+--
+-- RELACIONES PARA LA TABLA `inscripto`:
+--
+
+--
+-- Volcado de datos para la tabla `inscripto`
+--
+
+INSERT INTO `inscripto` (`id`, `documento`, `nombre`, `apellido`, `mail`, `telefono`, `carrera`, `otro`) VALUES
+(3, 40978427, 'Steven Yoel', 'Ibarraaaa', 'yoelibarra98@gmail.com', '12331231232', 'asdasdsad', ' asddas '),
+(4, 303456, 'Yoel', 'ibarra', 'yoelibarra98@gmail.com', '2325659628', 'asasddas', 'asdasd');
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `integrantes`
+--
+-- Creación: 14-01-2022 a las 18:50:37
 --
 
 DROP TABLE IF EXISTS `integrantes`;
@@ -80,13 +119,14 @@ CREATE TABLE IF NOT EXISTS `integrantes` (
   `id_rol` int(11) NOT NULL,
   PRIMARY KEY (`id_persona`),
   KEY `id_rol` (`id_rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 --
--- Truncar tablas antes de insertar `integrantes`
+-- RELACIONES PARA LA TABLA `integrantes`:
+--   `id_rol`
+--       `rol` -> `id_rol`
 --
 
-TRUNCATE TABLE `integrantes`;
 --
 -- Volcado de datos para la tabla `integrantes`
 --
@@ -101,6 +141,8 @@ INSERT INTO `integrantes` (`id_persona`, `carrera`, `nombre`, `apellido`, `id_ro
 --
 -- Estructura de tabla para la tabla `rol`
 --
+-- Creación: 14-01-2022 a las 18:50:37
+--
 
 DROP TABLE IF EXISTS `rol`;
 CREATE TABLE IF NOT EXISTS `rol` (
@@ -110,10 +152,9 @@ CREATE TABLE IF NOT EXISTS `rol` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Truncar tablas antes de insertar `rol`
+-- RELACIONES PARA LA TABLA `rol`:
 --
 
-TRUNCATE TABLE `rol`;
 --
 -- Volcado de datos para la tabla `rol`
 --
@@ -123,32 +164,6 @@ INSERT INTO `rol` (`id_rol`, `descripcion`) VALUES
 (1, 'Tesorero'),
 (2, 'Secretario');
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `solicitudesinscripcion`
---
-
-DROP TABLE IF EXISTS `solicitudesinscripcion`;
-CREATE TABLE IF NOT EXISTS `solicitudesinscripcion` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
-  `apellido` varchar(50) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `telefono` decimal(15,0) NOT NULL,
-  `mensaje` varchar(255) NOT NULL,
-  `observacionAdmin` varchar(255) NOT NULL,
-  `creado` date NOT NULL DEFAULT current_timestamp(),
-  `anioVacante` int(11) NOT NULL,
-  `notificar` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Truncar tablas antes de insertar `solicitudesinscripcion`
---
-
-TRUNCATE TABLE `solicitudesinscripcion`;
 --
 -- Restricciones para tablas volcadas
 --
