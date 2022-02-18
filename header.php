@@ -16,6 +16,7 @@
                     <a href="contacto.php">Contacto</a>
                     <a href="inscripcion.php">Inscripción</a>
                     <a href="inscriptos.php">Inscriptos</a>
+                    <a href="comentarios.php">Comentarios</a>
                 </nav>
             </div>
         </div>

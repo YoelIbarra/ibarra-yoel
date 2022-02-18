@@ -26,9 +26,7 @@
                     <label for="apellido">Apellido</label>
                     <input type="text" id="apellido" name="apellido" placeholder="Su Apellido" maxlength="50" required>
                 </div>
-                <!-- esto comento porque no hiría para un contacto-->
-                <!--label for="dni">DNI</label>
-                <input type="number" id="dni" name="dni" placeholder="Su DNI" maxlength="8" required-->
+
             </fieldset>
             <fieldset>
                 <div class="contacto-form-item">
